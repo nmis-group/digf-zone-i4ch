@@ -5,12 +5,8 @@
 - buffer-parser node (add channels to output data after converting to data type:float, only 31 items were added since the offset is limited to 120)
 - Format node (change data format ready to be written to a influxdb bucket/database)
 - influxdb node (specify the server with URL:http://localhost:8086 and API token, orgnisation:NMIS, bucket:radial_forge_v2, measurment: forge_data_v1)
-
-![modbus_flow](/images/modbus_flow_node_red.png)
-- files can be imported and exported as .json (when importing it should be imported as a new flow)
-
 ![modbus_flow](../images/modbus_flow_node_red.png)
-
+- files can be imported and exported as .json (when importing it should be imported as a new flow)
 
 ## Access influxdb database and query data
 - influxdb bucket is stored at 
@@ -43,5 +39,5 @@
 - Intialise the dataframe
 ```write_api = client.write_api(write_options=SYNCHRONOUS)```
 - Write data to influxdb specified bucket with user defined measurement names
-```write_api.write(bucket=bucket, org=org, record=tabel_name, data_frame_measurement_name='measurement_name',
-                    data_frame_tag_columns=['column name])```
+```write_api.write(bucket=bucket, org=org, record=tabel_name, data_frame_measurement_name='measurement_name',```
+                    ```data_frame_tag_columns=['column name])```
