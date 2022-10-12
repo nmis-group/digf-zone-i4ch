@@ -8,6 +8,47 @@
         "env": []
     },
     {
+        "id": "1e0fdb330bb42637",
+        "type": "modbus-client",
+        "name": "modebusclientfromhost",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "10.5.140.18",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "73b0481754abd209",
+        "type": "influxdb",
+        "hostname": "localhost",
+        "port": "8086",
+        "protocol": "http",
+        "database": "radial_forge_v2",
+        "name": "hyron-c",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
         "id": "dfcaa2cf846cc439",
         "type": "modbus-read",
         "z": "6d8f5407a04cb9cb",
@@ -60,7 +101,7 @@
         "showErrors": false,
         "unitid": "1",
         "dataType": "HoldingRegister",
-        "adr": "18",
+        "adr": "16",
         "quantity": "62",
         "rate": "10",
         "rateUnit": "ms",
@@ -110,7 +151,396 @@
         "items": [
             {
                 "type": "floatbe",
-                "name": "item1",
+                "name": "SBA_ActPos [mm]",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACT_Force [kN]",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACT_Force [kN]",
+                "offset": 8,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_ACTspd [mm/min]",
+                "offset": 12,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_NomPos [mm]",
+                "offset": 16,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACTspd [mm/min]",
+                "offset": 20,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACTspd [mm/min]",
+                "offset": 24,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_NOMpos [mm]",
+                "offset": 28,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_OUT [%]",
+                "offset": 32,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOMpos [mm]",
+                "offset": 36,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOMpos [mm]",
+                "offset": 40,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_OUT [%]",
+                "offset": 44,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback SBA [%]",
+                "offset": 48,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_OUT [%]",
+                "offset": 52,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_OUT [%]",
+                "offset": 56,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_NOMspd [mm/min]",
+                "offset": 60,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Frc_Volt",
+                "offset": 64,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOMspd [mm/min]",
+                "offset": 68,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOMspd [mm/min]",
+                "offset": 72,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback L [%]",
+                "offset": 76,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Speed Vn_1 [rpm]",
+                "offset": 80,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOM_Force [kN]",
+                "offset": 84,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOM_Force [kN]",
+                "offset": 88,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$F_F41L (I14S8)",
+                "offset": 92,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_ActPos [mm]",
+                "offset": 96,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback A [%]",
+                "offset": 100,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback DB [%]",
+                "offset": 104,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_NomSpd [mm/min]",
+                "offset": 108,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback_SPA [%]",
+                "offset": 112,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "RamRetract_ActSpd [rpm]",
+                "offset": 116,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "ForgingBox_Temp",
+                "offset": 120,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [
+                "653d7dbff0ed7586",
+                "c75f47eaf6cca4aa"
+            ]
+        ]
+    },
+    {
+        "id": "653d7dbff0ed7586",
+        "type": "debug",
+        "z": "6d8f5407a04cb9cb",
+        "name": "Firstout msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ac4afdd7ca2f5b96",
+        "type": "modbus-response",
+        "z": "6d8f5407a04cb9cb",
+        "name": "Firstout",
+        "registerShowMax": 20,
+        "x": 420,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c75f47eaf6cca4aa",
+        "type": "influxdb out",
+        "z": "6d8f5407a04cb9cb",
+        "influxdb": "73b0481754abd209",
+        "name": "influxdb",
+        "measurement": "forge-data-v1",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "us",
+        "retentionPolicyV18Flux": "",
+        "org": "NMIS",
+        "bucket": "radial_forge_v2",
+        "x": 680,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8231e5f8bedc3321",
+        "type": "modbus-read",
+        "z": "6d8f5407a04cb9cb",
+        "name": "Modbus Read",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "16",
+        "quantity": "120",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "1e0fdb330bb42637",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 230,
+        "y": 560,
+        "wires": [
+            [
+                "228b59bbcc9136ca"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "228b59bbcc9136ca",
+        "type": "buffer-parser",
+        "z": "6d8f5407a04cb9cb",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "iten1",
                 "offset": 0,
                 "length": 1,
                 "offsetbit": 0,
@@ -386,6 +816,105 @@
                 "offsetbit": 0,
                 "scale": "1",
                 "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item32",
+                "offset": 124,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item33",
+                "offset": 128,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item34",
+                "offset": 132,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item35",
+                "offset": 136,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item36",
+                "offset": 140,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item37",
+                "offset": 144,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item38",
+                "offset": 148,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item39",
+                "offset": 152,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item40",
+                "offset": 156,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item41",
+                "offset": 160,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item42",
+                "offset": 164,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
             }
         ],
         "swap1": "",
@@ -402,20 +931,19 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 430,
-        "y": 360,
+        "x": 450,
+        "y": 540,
         "wires": [
             [
-                "653d7dbff0ed7586",
-                "64d0e6f48928586a"
+                "8faec378bd33ff54"
             ]
         ]
     },
     {
-        "id": "653d7dbff0ed7586",
+        "id": "8faec378bd33ff54",
         "type": "debug",
         "z": "6d8f5407a04cb9cb",
-        "name": "Firstout msg",
+        "name": "Debug1",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -424,104 +952,610 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "ac4afdd7ca2f5b96",
-        "type": "modbus-response",
-        "z": "6d8f5407a04cb9cb",
-        "name": "Firstout",
-        "registerShowMax": 20,
-        "x": 420,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "64d0e6f48928586a",
-        "type": "change",
-        "z": "6d8f5407a04cb9cb",
-        "name": "Format",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.item5",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
         "x": 660,
-        "y": 440,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "be7422465262b1a4",
+        "type": "modbus-read",
+        "z": "6d8f5407a04cb9cb",
+        "name": "Modbus Read",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "120",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "1e0fdb330bb42637",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 230,
+        "y": 700,
         "wires": [
             [
-                "c75f47eaf6cca4aa"
-            ]
+                "8bf8cdb98b516b0e"
+            ],
+            []
         ]
     },
     {
-        "id": "c75f47eaf6cca4aa",
-        "type": "influxdb out",
+        "id": "8bf8cdb98b516b0e",
+        "type": "buffer-parser",
         "z": "6d8f5407a04cb9cb",
-        "influxdb": "73b0481754abd209",
-        "name": "influxdb",
-        "measurement": "forge-data-v1",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "us",
-        "retentionPolicyV18Flux": "",
-        "org": "NMIS",
-        "bucket": "radial_forge_v2",
-        "x": 860,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "1e0fdb330bb42637",
-        "type": "modbus-client",
-        "name": "modebusclientfromhost",
-        "clienttype": "tcp",
-        "bufferCommands": true,
-        "stateLogEnabled": false,
-        "queueLogEnabled": false,
-        "failureLogEnabled": true,
-        "tcpHost": "10.5.140.18",
-        "tcpPort": "502",
-        "tcpType": "DEFAULT",
-        "serialPort": "/dev/ttyUSB",
-        "serialType": "RTU-BUFFERD",
-        "serialBaudrate": "9600",
-        "serialDatabits": "8",
-        "serialStopbits": "1",
-        "serialParity": "none",
-        "serialConnectionDelay": "100",
-        "serialAsciiResponseStartDelimiter": "0x3A",
-        "unit_id": "1",
-        "commandDelay": "1",
-        "clientTimeout": "1000",
-        "reconnectOnTimeout": true,
-        "reconnectTimeout": "2000",
-        "parallelUnitIdsAllowed": true
-    },
-    {
-        "id": "73b0481754abd209",
-        "type": "influxdb",
-        "hostname": "localhost",
-        "port": "8086",
-        "protocol": "http",
-        "database": "radial_forge_v2",
-        "name": "hyron-c",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "2.0",
-        "url": "http://localhost:8086",
-        "rejectUnauthorized": true
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "iten1",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item2",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item3",
+                "offset": 8,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "string",
+                "name": "item4",
+                "offset": 12,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "string",
+                "name": "item5",
+                "offset": 16,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item6",
+                "offset": 20,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item7",
+                "offset": 24,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item8",
+                "offset": 28,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item9",
+                "offset": 32,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item10",
+                "offset": 36,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item11",
+                "offset": 40,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item12",
+                "offset": 44,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item13",
+                "offset": 48,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item14",
+                "offset": 52,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item15",
+                "offset": 56,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item16",
+                "offset": 60,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item17",
+                "offset": 64,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item18",
+                "offset": 68,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item19",
+                "offset": 72,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item20",
+                "offset": 76,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item21",
+                "offset": 80,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item22",
+                "offset": 84,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item23",
+                "offset": 88,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item24",
+                "offset": 92,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item25",
+                "offset": 96,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item26",
+                "offset": 100,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item27",
+                "offset": 104,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item28",
+                "offset": 108,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item29",
+                "offset": 112,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item30",
+                "offset": 116,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item31",
+                "offset": 120,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item32",
+                "offset": 124,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item33",
+                "offset": 128,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item34",
+                "offset": 132,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item35",
+                "offset": 136,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item36",
+                "offset": 140,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item37",
+                "offset": 144,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item38",
+                "offset": 148,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item39",
+                "offset": 152,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item40",
+                "offset": 156,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item41",
+                "offset": 160,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item42",
+                "offset": 164,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item43",
+                "offset": 168,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item44",
+                "offset": 172,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item45",
+                "offset": 176,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item46",
+                "offset": 180,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item47",
+                "offset": 184,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item48",
+                "offset": 188,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item49",
+                "offset": 192,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item50",
+                "offset": 196,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item51",
+                "offset": 200,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item52",
+                "offset": 204,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item53",
+                "offset": 208,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item54",
+                "offset": 212,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item55",
+                "offset": 216,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item56",
+                "offset": 220,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item57",
+                "offset": 224,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item58",
+                "offset": 228,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item59",
+                "offset": 232,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "item60",
+                "offset": 236,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 700,
+        "wires": [
+            []
+        ]
     }
 ]
