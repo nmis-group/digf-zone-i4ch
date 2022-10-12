@@ -27,6 +27,7 @@
 - Format node (change data format ready to be written to a influxdb bucket/database)
 - influxdb node (specify the server with URL:http://localhost:8086 and API token, orgnisation:NMIS, bucket:radial_forge_v2, measurment: forge_data_v1)
 ![modbus_flow](/images/modbus_flow_node_red.png)
+- files can be imported and exported as .json (when importing it should be imported as a new flow)
 
 ## Access influxdb database and query data
 - influxdb bucket is stored at 
@@ -51,3 +52,13 @@
     ```query_api = client.query_api()```
 - Create a Flux query
 - Pass the query method to create results or a dataframe (install pandas library if creating a dataframe) using the query client
+
+## Influxdb write data into pd dataframes
+- Create a pd dataframe
+``` df = client.query_api().query_data_frame(org=my_org, query=query)```
+- DataFrame must have the timestamp column as an index for the client
+- Intialise the dataframe
+```write_api = client.write_api(write_options=SYNCHRONOUS)```
+- Write data to influxdb specified bucket with user defined measurement names
+```write_api.write(bucket=bucket, org=org, record=tabel_name, data_frame_measurement_name='measurement_name',
+                    data_frame_tag_columns=['column name])```
