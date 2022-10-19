@@ -8,14 +8,6 @@
         "env": []
     },
     {
-        "id": "148ae9a6173e5964",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "1e0fdb330bb42637",
         "type": "modbus-client",
         "name": "modebusclientfromhost",
@@ -487,8 +479,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 360,
+        "x": 670,
+        "y": 340,
         "wires": []
     },
     {
@@ -515,8 +507,8 @@
         "retentionPolicyV18Flux": "",
         "org": "NMIS",
         "bucket": "radial_forge_db",
-        "x": 700,
-        "y": 440,
+        "x": 680,
+        "y": 420,
         "wires": []
     },
     {
