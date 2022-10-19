@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "148ae9a6173e5964",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1e0fdb330bb42637",
         "type": "modbus-client",
         "name": "modebusclientfromhost",
@@ -506,13 +514,13 @@
         "precisionV18FluxV20": "us",
         "retentionPolicyV18Flux": "",
         "org": "NMIS",
-        "bucket": "radial-forge",
+        "bucket": "radial_forge_db",
         "x": 720,
         "y": 420,
         "wires": []
     },
     {
-        "id": "8231e5f8bedc3321",
+        "id": "c4cfe67f2d4aa951",
         "type": "modbus-read",
         "z": "6d8f5407a04cb9cb",
         "name": "Modbus Read",
@@ -533,17 +541,17 @@
         "ioFile": "",
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
-        "x": 230,
-        "y": 560,
+        "x": 190,
+        "y": 600,
         "wires": [
             [
-                "228b59bbcc9136ca"
+                "55fa25dde6261bf9"
             ],
             []
         ]
     },
     {
-        "id": "228b59bbcc9136ca",
+        "id": "55fa25dde6261bf9",
         "type": "buffer-parser",
         "z": "6d8f5407a04cb9cb",
         "name": "",
@@ -554,7 +562,7 @@
         "items": [
             {
                 "type": "floatbe",
-                "name": "iten1",
+                "name": "Timer Tick [ms]",
                 "offset": 0,
                 "length": 1,
                 "offsetbit": 0,
@@ -563,7 +571,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item2",
+                "name": "Block-Nr",
                 "offset": 4,
                 "length": 1,
                 "offsetbit": 0,
@@ -572,7 +580,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item3",
+                "name": "Power [kW]",
                 "offset": 8,
                 "length": 1,
                 "offsetbit": 0,
@@ -581,7 +589,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item4",
+                "name": "Force [kN]",
                 "offset": 12,
                 "length": 1,
                 "offsetbit": 0,
@@ -590,7 +598,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item5",
+                "name": "A_ges_vibr",
                 "offset": 16,
                 "length": 1,
                 "offsetbit": 0,
@@ -599,7 +607,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item6",
+                "name": "Schlagzahl [1/min]",
                 "offset": 20,
                 "length": 1,
                 "offsetbit": 0,
@@ -608,7 +616,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item7",
+                "name": "EXZ_pos [deg]",
                 "offset": 24,
                 "length": 1,
                 "offsetbit": 0,
@@ -617,7 +625,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item8",
+                "name": "hydraulic low pressure [bar]",
                 "offset": 28,
                 "length": 1,
                 "offsetbit": 0,
@@ -626,7 +634,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item9",
+                "name": "hydraulic high pressure [bar]",
                 "offset": 32,
                 "length": 1,
                 "offsetbit": 0,
@@ -635,7 +643,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item10",
+                "name": "A_ACTpos [mm]",
                 "offset": 36,
                 "length": 1,
                 "offsetbit": 0,
@@ -644,7 +652,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item11",
+                "name": "B_ACTpos [mm]",
                 "offset": 40,
                 "length": 1,
                 "offsetbit": 0,
@@ -653,7 +661,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item12",
+                "name": "DB_ACTpos [mm]",
                 "offset": 44,
                 "length": 1,
                 "offsetbit": 0,
@@ -662,7 +670,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item13",
+                "name": "D_ACTpos [mm]",
                 "offset": 48,
                 "length": 1,
                 "offsetbit": 0,
@@ -671,7 +679,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item14",
+                "name": "L_ACTpos [mm]",
                 "offset": 52,
                 "length": 1,
                 "offsetbit": 0,
@@ -680,7 +688,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item15",
+                "name": "R_ACTpos [mm]",
                 "offset": 56,
                 "length": 1,
                 "offsetbit": 0,
@@ -689,7 +697,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item16",
+                "name": "SBA_ActPos [mm]",
                 "offset": 60,
                 "length": 1,
                 "offsetbit": 0,
@@ -698,7 +706,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item17",
+                "name": "INDA_ACTpos [deg]",
                 "offset": 64,
                 "length": 1,
                 "offsetbit": 0,
@@ -707,7 +715,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item18",
+                "name": "A_ACT_Force [kN]",
                 "offset": 68,
                 "length": 1,
                 "offsetbit": 0,
@@ -716,7 +724,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item19",
+                "name": "B_ACT_Force [kN]",
                 "offset": 72,
                 "length": 1,
                 "offsetbit": 0,
@@ -725,7 +733,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item20",
+                "name": "DB_ACT_Force [kN]",
                 "offset": 76,
                 "length": 1,
                 "offsetbit": 0,
@@ -734,7 +742,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item21",
+                "name": "D_ACT_Force [kN]",
                 "offset": 80,
                 "length": 1,
                 "offsetbit": 0,
@@ -743,7 +751,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item22",
+                "name": "L_ACTspd [mm/min]",
                 "offset": 84,
                 "length": 1,
                 "offsetbit": 0,
@@ -752,7 +760,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item23",
+                "name": "R_ACTspd [mm/min]",
                 "offset": 88,
                 "length": 1,
                 "offsetbit": 0,
@@ -761,7 +769,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item24",
+                "name": "SBA_NomPos [mm]",
                 "offset": 92,
                 "length": 1,
                 "offsetbit": 0,
@@ -770,7 +778,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item25",
+                "name": "INDA_NOMspd [U/min]",
                 "offset": 96,
                 "length": 1,
                 "offsetbit": 0,
@@ -779,7 +787,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item26",
+                "name": "A_ACTspd [mm/min]",
                 "offset": 100,
                 "length": 1,
                 "offsetbit": 0,
@@ -788,7 +796,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item27",
+                "name": "B_ACTspd [mm/min]",
                 "offset": 104,
                 "length": 1,
                 "offsetbit": 0,
@@ -797,7 +805,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item28",
+                "name": "DB_ACTspd [mm/min]",
                 "offset": 108,
                 "length": 1,
                 "offsetbit": 0,
@@ -806,7 +814,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item29",
+                "name": "ForgingBox_Temp",
                 "offset": 112,
                 "length": 1,
                 "offsetbit": 0,
@@ -815,7 +823,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item30",
+                "name": "L_NOMpos [mm]",
                 "offset": 116,
                 "length": 1,
                 "offsetbit": 0,
@@ -824,7 +832,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item31",
+                "name": "R_NOMpos [mm]",
                 "offset": 120,
                 "length": 1,
                 "offsetbit": 0,
@@ -833,7 +841,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item32",
+                "name": "SBA_OUT [%]",
                 "offset": 124,
                 "length": 1,
                 "offsetbit": 0,
@@ -842,7 +850,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item33",
+                "name": "INDA_OUT [%]",
                 "offset": 128,
                 "length": 1,
                 "offsetbit": 0,
@@ -851,7 +859,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item34",
+                "name": "A_NOMpos [mm]",
                 "offset": 132,
                 "length": 1,
                 "offsetbit": 0,
@@ -860,7 +868,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item35",
+                "name": "B_NOMpos [mm]",
                 "offset": 136,
                 "length": 1,
                 "offsetbit": 0,
@@ -869,7 +877,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item36",
+                "name": "DB_NOMpos [mm]",
                 "offset": 140,
                 "length": 1,
                 "offsetbit": 0,
@@ -878,7 +886,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item37",
+                "name": "D_NOMpos [mm]",
                 "offset": 144,
                 "length": 1,
                 "offsetbit": 0,
@@ -887,7 +895,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item38",
+                "name": "L_OUT [%]",
                 "offset": 148,
                 "length": 1,
                 "offsetbit": 0,
@@ -896,7 +904,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item39",
+                "name": "R_OUT [%]",
                 "offset": 152,
                 "length": 1,
                 "offsetbit": 0,
@@ -905,7 +913,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item40",
+                "name": "Feedback SBA [%]",
                 "offset": 156,
                 "length": 1,
                 "offsetbit": 0,
@@ -914,7 +922,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item41",
+                "name": "INDA_NOMpos [deg]",
                 "offset": 160,
                 "length": 1,
                 "offsetbit": 0,
@@ -923,466 +931,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item42",
-                "offset": 164,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            }
-        ],
-        "swap1": "",
-        "swap2": "",
-        "swap3": "",
-        "swap1Type": "swap",
-        "swap2Type": "swap",
-        "swap3Type": "swap",
-        "msgProperty": "payload",
-        "msgPropertyType": "str",
-        "resultType": "keyvalue",
-        "resultTypeType": "return",
-        "multipleResult": false,
-        "fanOutMultipleResult": false,
-        "setTopic": true,
-        "outputs": 1,
-        "x": 450,
-        "y": 540,
-        "wires": [
-            [
-                "8faec378bd33ff54"
-            ]
-        ]
-    },
-    {
-        "id": "8faec378bd33ff54",
-        "type": "debug",
-        "z": "6d8f5407a04cb9cb",
-        "name": "Debug1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "be7422465262b1a4",
-        "type": "modbus-read",
-        "z": "6d8f5407a04cb9cb",
-        "name": "Modbus Read",
-        "topic": "",
-        "showStatusActivities": false,
-        "logIOActivities": false,
-        "showErrors": false,
-        "unitid": "1",
-        "dataType": "HoldingRegister",
-        "adr": "0",
-        "quantity": "120",
-        "rate": "1",
-        "rateUnit": "s",
-        "delayOnStart": false,
-        "startDelayTime": "",
-        "server": "1e0fdb330bb42637",
-        "useIOFile": false,
-        "ioFile": "",
-        "useIOForPayload": false,
-        "emptyMsgOnFail": false,
-        "x": 230,
-        "y": 700,
-        "wires": [
-            [
-                "8bf8cdb98b516b0e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8bf8cdb98b516b0e",
-        "type": "buffer-parser",
-        "z": "6d8f5407a04cb9cb",
-        "name": "",
-        "data": "payload",
-        "dataType": "msg",
-        "specification": "spec",
-        "specificationType": "ui",
-        "items": [
-            {
-                "type": "floatbe",
-                "name": "iten1",
-                "offset": 0,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item2",
-                "offset": 4,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item3",
-                "offset": 8,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "string",
-                "name": "item4",
-                "offset": 12,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "string",
-                "name": "item5",
-                "offset": 16,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item6",
-                "offset": 20,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item7",
-                "offset": 24,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item8",
-                "offset": 28,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item9",
-                "offset": 32,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item10",
-                "offset": 36,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item11",
-                "offset": 40,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item12",
-                "offset": 44,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item13",
-                "offset": 48,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item14",
-                "offset": 52,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item15",
-                "offset": 56,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item16",
-                "offset": 60,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item17",
-                "offset": 64,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item18",
-                "offset": 68,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item19",
-                "offset": 72,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item20",
-                "offset": 76,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item21",
-                "offset": 80,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item22",
-                "offset": 84,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item23",
-                "offset": 88,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item24",
-                "offset": 92,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item25",
-                "offset": 96,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item26",
-                "offset": 100,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item27",
-                "offset": 104,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item28",
-                "offset": 108,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item29",
-                "offset": 112,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item30",
-                "offset": 116,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item31",
-                "offset": 120,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item32",
-                "offset": 124,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item33",
-                "offset": 128,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item34",
-                "offset": 132,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item35",
-                "offset": 136,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item36",
-                "offset": 140,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item37",
-                "offset": 144,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item38",
-                "offset": 148,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item39",
-                "offset": 152,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item40",
-                "offset": 156,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item41",
-                "offset": 160,
-                "length": 1,
-                "offsetbit": 0,
-                "scale": "1",
-                "mask": ""
-            },
-            {
-                "type": "floatbe",
-                "name": "item42",
+                "name": "A_OUT [%]",
                 "offset": 164,
                 "length": 1,
                 "offsetbit": 0,
@@ -1391,7 +940,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item43",
+                "name": "B_OUT [%]",
                 "offset": 168,
                 "length": 1,
                 "offsetbit": 0,
@@ -1400,7 +949,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item44",
+                "name": "DB_OUT [%]",
                 "offset": 172,
                 "length": 1,
                 "offsetbit": 0,
@@ -1409,7 +958,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item45",
+                "name": "D_OUT [%]",
                 "offset": 176,
                 "length": 1,
                 "offsetbit": 0,
@@ -1418,7 +967,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item46",
+                "name": "L_NOMspd [mm/min]",
                 "offset": 180,
                 "length": 1,
                 "offsetbit": 0,
@@ -1427,7 +976,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item47",
+                "name": "R_NOMspd [mm/min]",
                 "offset": 184,
                 "length": 1,
                 "offsetbit": 0,
@@ -1436,7 +985,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item48",
+                "name": "Frc_Volt",
                 "offset": 188,
                 "length": 1,
                 "offsetbit": 0,
@@ -1445,7 +994,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item49",
+                "name": "INDA_ACTspd [U/min]",
                 "offset": 192,
                 "length": 1,
                 "offsetbit": 0,
@@ -1454,7 +1003,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item50",
+                "name": "A_NOMspd [mm/min]",
                 "offset": 196,
                 "length": 1,
                 "offsetbit": 0,
@@ -1463,7 +1012,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item51",
+                "name": "B_NOMspd [mm/min]",
                 "offset": 200,
                 "length": 1,
                 "offsetbit": 0,
@@ -1472,7 +1021,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item52",
+                "name": "DB_NOMspd [mm/min]",
                 "offset": 204,
                 "length": 1,
                 "offsetbit": 0,
@@ -1481,7 +1030,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item53",
+                "name": "D_NOMspd [mm/min]",
                 "offset": 208,
                 "length": 1,
                 "offsetbit": 0,
@@ -1490,7 +1039,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item54",
+                "name": "Feedback L [%]",
                 "offset": 212,
                 "length": 1,
                 "offsetbit": 0,
@@ -1499,7 +1048,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item55",
+                "name": "Feedback R [%]",
                 "offset": 216,
                 "length": 1,
                 "offsetbit": 0,
@@ -1508,7 +1057,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item56",
+                "name": "Speed SmoothV._n_1 [rpm]",
                 "offset": 220,
                 "length": 1,
                 "offsetbit": 0,
@@ -1517,7 +1066,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item57",
+                "name": "NOMforceSPA [kN]",
                 "offset": 224,
                 "length": 1,
                 "offsetbit": 0,
@@ -1526,7 +1075,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item58",
+                "name": "A_NOM_Force [kN]",
                 "offset": 228,
                 "length": 1,
                 "offsetbit": 0,
@@ -1535,7 +1084,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item59",
+                "name": "B_NOM_Force [kN]",
                 "offset": 232,
                 "length": 1,
                 "offsetbit": 0,
@@ -1544,7 +1093,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "item60",
+                "name": "DB_NOM_Force [kN]",
                 "offset": 236,
                 "length": 1,
                 "offsetbit": 0,
@@ -1566,10 +1115,921 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 450,
-        "y": 700,
+        "x": 410,
+        "y": 580,
         "wires": [
+            [
+                "f260268fcfc1f4bb"
+            ]
+        ]
+    },
+    {
+        "id": "d6971e0b51c370e9",
+        "type": "modbus-read",
+        "z": "6d8f5407a04cb9cb",
+        "name": "Modbus Read",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "240",
+        "quantity": "78",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "1e0fdb330bb42637",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 190,
+        "y": 740,
+        "wires": [
+            [
+                "f77e6565ccc73930"
+            ],
             []
         ]
+    },
+    {
+        "id": "f77e6565ccc73930",
+        "type": "buffer-parser",
+        "z": "6d8f5407a04cb9cb",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "D_NOM_Force [kN]",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$F_F41L (I14S8)",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_ActSpd [mm/min]",
+                "offset": 8,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_ActPos [mm]",
+                "offset": 12,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SPA_OUT [%]",
+                "offset": 16,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback A [%]",
+                "offset": 20,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback B [%]",
+                "offset": 24,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback DB [%]",
+                "offset": 28,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback D [%]",
+                "offset": 32,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_NomSpd [mm/min]",
+                "offset": 36,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_NomPos",
+                "offset": 40,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback_SPA [%]",
+                "offset": 44,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Lub_ActSpd [rpm]",
+                "offset": 48,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "RamRetract_ActSpd [rpm]",
+                "offset": 52,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Hyd_ActSpd [rpm]",
+                "offset": 56,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "D_ACTspd [mm/min]",
+                "offset": 60,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "TMP_Ind_U1 [\\u00b0C]",
+                "offset": 64,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "TMP_Ind_F [\\u00b0C]",
+                "offset": 68,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_Out [%]",
+                "offset": 72,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "ACTforceSPA [kN]",
+                "offset": 76,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$U_GH_HEATON_1 (U25S0)",
+                "offset": 80,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "W2 Waterflow [l]",
+                "offset": 84,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "W1 Waterflow [l]",
+                "offset": 88,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IL act value [%]",
+                "offset": 92,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IL_OUT   [%]",
+                "offset": 96,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$U_GH_NOMVAL_1 (U25W1)",
+                "offset": 100,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$B12R_Y11 (U14S16)",
+                "offset": 104,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L1.R_B41 [bar]",
+                "offset": 108,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "O_EMERG",
+                "offset": 112,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "STP || EM",
+                "offset": 116,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "O_MASTOP",
+                "offset": 120,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "c02w",
+                "offset": 124,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "U_ACTVAL_2",
+                "offset": 128,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "U_NOMVAL",
+                "offset": 132,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$E_GH_FAULT_1 (I25S21)",
+                "offset": 136,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$E_GH_FAULT_2 (I26S21)",
+                "offset": 140,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$U_GH_NOMEXT_1 (U25S1)",
+                "offset": 144,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$U_GH_HEATON_2 (U26S0)",
+                "offset": 148,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$U_GH_NOMEXT_2 (U26S1)",
+                "offset": 152,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 410,
+        "y": 740,
+        "wires": [
+            [
+                "f260268fcfc1f4bb"
+            ]
+        ]
+    },
+    {
+        "id": "f260268fcfc1f4bb",
+        "type": "join",
+        "z": "6d8f5407a04cb9cb",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 630,
+        "y": 660,
+        "wires": [
+            [
+                "8113cb235969d629"
+            ]
+        ]
+    },
+    {
+        "id": "8113cb235969d629",
+        "type": "debug",
+        "z": "6d8f5407a04cb9cb",
+        "name": "Debug1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "80452969a4f2bced",
+        "type": "modbus-read",
+        "z": "148ae9a6173e5964",
+        "name": "Modbus Read",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "18",
+        "quantity": "62",
+        "rate": "10",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "1e0fdb330bb42637",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "8b73f1bd25613d47",
+                "71f66dcaae9a4549"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8b73f1bd25613d47",
+        "type": "modbus-response",
+        "z": "148ae9a6173e5964",
+        "name": "Firstout",
+        "registerShowMax": 20,
+        "x": 420,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "cb9c84b5c3c4b9b2",
+        "type": "modbus-read",
+        "z": "148ae9a6173e5964",
+        "name": "Modbus Read",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "16",
+        "quantity": "62",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "1e0fdb330bb42637",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 230,
+        "y": 280,
+        "wires": [
+            [
+                "f6885e46468b37c5",
+                "9f5831cb42460721"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "71f66dcaae9a4549",
+        "type": "debug",
+        "z": "148ae9a6173e5964",
+        "name": "Firstout msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f6885e46468b37c5",
+        "type": "buffer-parser",
+        "z": "148ae9a6173e5964",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "SBA_ActPos [mm]",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACT_Force [kN]",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACT_Force [kN]",
+                "offset": 8,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_ACTspd [mm/min]",
+                "offset": 12,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_NomPos [mm]",
+                "offset": 16,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACTspd [mm/min]",
+                "offset": 20,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACTspd [mm/min]",
+                "offset": 24,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_NOMpos [mm]",
+                "offset": 28,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_OUT [%]",
+                "offset": 32,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOMpos [mm]",
+                "offset": 36,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOMpos [mm]",
+                "offset": 40,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_OUT [%]",
+                "offset": 44,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback SBA [%]",
+                "offset": 48,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_OUT [%]",
+                "offset": 52,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_OUT [%]",
+                "offset": 56,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_NOMspd [mm/min]",
+                "offset": 60,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Frc_Volt",
+                "offset": 64,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOMspd [mm/min]",
+                "offset": 68,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOMspd [mm/min]",
+                "offset": 72,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback L [%]",
+                "offset": 76,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Speed Vn_1 [rpm]",
+                "offset": 80,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOM_Force [kN]",
+                "offset": 84,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOM_Force [kN]",
+                "offset": 88,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "$F_F41L (I14S8)",
+                "offset": 92,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_ActPos [mm]",
+                "offset": 96,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback A [%]",
+                "offset": 100,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback DB [%]",
+                "offset": 104,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_NomSpd [mm/min]",
+                "offset": 108,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback_SPA [%]",
+                "offset": 112,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "RamRetract_ActSpd [rpm]",
+                "offset": 116,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "ForgingBox_Temp",
+                "offset": 120,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [
+                "16f7202973c2e451",
+                "f0eea5a44121dc18"
+            ]
+        ]
+    },
+    {
+        "id": "16f7202973c2e451",
+        "type": "debug",
+        "z": "148ae9a6173e5964",
+        "name": "Firstout msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9f5831cb42460721",
+        "type": "modbus-response",
+        "z": "148ae9a6173e5964",
+        "name": "Firstout",
+        "registerShowMax": 20,
+        "x": 420,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f0eea5a44121dc18",
+        "type": "influxdb out",
+        "z": "148ae9a6173e5964",
+        "influxdb": "ac0f8514f63a3165",
+        "name": "influxdb",
+        "measurement": "forge-data",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "us",
+        "retentionPolicyV18Flux": "",
+        "org": "NMIS",
+        "bucket": "radial-forge",
+        "x": 680,
+        "y": 420,
+        "wires": []
     }
 ]
