@@ -515,8 +515,8 @@
         "retentionPolicyV18Flux": "",
         "org": "NMIS",
         "bucket": "radial_forge_db",
-        "x": 720,
-        "y": 420,
+        "x": 700,
+        "y": 440,
         "wires": []
     },
     {
