@@ -116,9 +116,9 @@
         "unitid": "1",
         "dataType": "HoldingRegister",
         "adr": "16",
-        "quantity": "62",
-        "rate": "1",
-        "rateUnit": "s",
+        "quantity": "120",
+        "rate": "10",
+        "rateUnit": "ms",
         "delayOnStart": false,
         "startDelayTime": "",
         "server": "1e0fdb330bb42637",
@@ -165,7 +165,7 @@
         "items": [
             {
                 "type": "floatbe",
-                "name": "SBA_ActPos [mm]",
+                "name": "Power [kW]",
                 "offset": 0,
                 "length": 1,
                 "offsetbit": 0,
@@ -174,7 +174,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "A_ACT_Force [kN]",
+                "name": "Force [kN]",
                 "offset": 4,
                 "length": 1,
                 "offsetbit": 0,
@@ -183,7 +183,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "DB_ACT_Force [kN]",
+                "name": "Strokes [1/min]",
                 "offset": 8,
                 "length": 1,
                 "offsetbit": 0,
@@ -192,7 +192,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "L_ACTspd [mm/min]",
+                "name": "EXZ_pos [deg]",
                 "offset": 12,
                 "length": 1,
                 "offsetbit": 0,
@@ -201,7 +201,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "SBA_NomPos [mm]",
+                "name": "A_ACTpos [mm]",
                 "offset": 16,
                 "length": 1,
                 "offsetbit": 0,
@@ -210,7 +210,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "A_ACTspd [mm/min]",
+                "name": "L_ACTpos [mm]",
                 "offset": 20,
                 "length": 1,
                 "offsetbit": 0,
@@ -219,7 +219,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "DB_ACTspd [mm/min]",
+                "name": "R_ACTpos [mm]",
                 "offset": 24,
                 "length": 1,
                 "offsetbit": 0,
@@ -228,7 +228,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "L_NOMpos [mm]",
+                "name": "SBA_ActPos [mm]",
                 "offset": 28,
                 "length": 1,
                 "offsetbit": 0,
@@ -237,7 +237,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "SBA_OUT [%]",
+                "name": "A_ACT_Force [kN]",
                 "offset": 32,
                 "length": 1,
                 "offsetbit": 0,
@@ -264,7 +264,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "L_OUT [%]",
+                "name": "DB_ACT_Force [kN]",
                 "offset": 44,
                 "length": 1,
                 "offsetbit": 0,
@@ -273,7 +273,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Feedback SBA [%]",
+                "name": "L_ACTspd [mm/min]",
                 "offset": 48,
                 "length": 1,
                 "offsetbit": 0,
@@ -282,7 +282,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "A_OUT [%]",
+                "name": "SBA_NomPos [mm]",
                 "offset": 52,
                 "length": 1,
                 "offsetbit": 0,
@@ -291,7 +291,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "DB_OUT [%]",
+                "name": "A_ACTspd [mm/min]",
                 "offset": 56,
                 "length": 1,
                 "offsetbit": 0,
@@ -300,7 +300,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "L_NOMspd [mm/min]",
+                "name": "DB_ACTspd [mm/min]",
                 "offset": 60,
                 "length": 1,
                 "offsetbit": 0,
@@ -309,7 +309,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Frc_Volt",
+                "name": "L_NOMpos [mm]",
                 "offset": 64,
                 "length": 1,
                 "offsetbit": 0,
@@ -318,7 +318,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "A_NOMspd [mm/min]",
+                "name": "SBA_OUT [%]",
                 "offset": 68,
                 "length": 1,
                 "offsetbit": 0,
@@ -327,7 +327,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "DB_NOMspd [mm/min]",
+                "name": "A_NOMpos [mm]",
                 "offset": 72,
                 "length": 1,
                 "offsetbit": 0,
@@ -336,7 +336,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Feedback L [%]",
+                "name": "DB_NOMpos [mm]",
                 "offset": 76,
                 "length": 1,
                 "offsetbit": 0,
@@ -345,7 +345,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Speed Vn_1 [rpm]",
+                "name": "L_OUT [%]",
                 "offset": 80,
                 "length": 1,
                 "offsetbit": 0,
@@ -354,7 +354,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "A_NOM_Force [kN]",
+                "name": "Feedback SBA [%]",
                 "offset": 84,
                 "length": 1,
                 "offsetbit": 0,
@@ -363,7 +363,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "DB_NOM_Force [kN]",
+                "name": "A_OUT [%]",
                 "offset": 88,
                 "length": 1,
                 "offsetbit": 0,
@@ -372,7 +372,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "$F_F41L (I14S8)",
+                "name": "DB_OUT [%]",
                 "offset": 92,
                 "length": 1,
                 "offsetbit": 0,
@@ -381,7 +381,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "IP_ActPos [mm]",
+                "name": "L_NOMspd [mm/min]",
                 "offset": 96,
                 "length": 1,
                 "offsetbit": 0,
@@ -390,7 +390,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Feedback A [%]",
+                "name": "Frc_Volt",
                 "offset": 100,
                 "length": 1,
                 "offsetbit": 0,
@@ -399,7 +399,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Feedback DB [%]",
+                "name": "A_NOMspd [mm/min]",
                 "offset": 104,
                 "length": 1,
                 "offsetbit": 0,
@@ -408,7 +408,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "IP_NomSpd [mm/min]",
+                "name": "DB_NOMspd [mm/min]",
                 "offset": 108,
                 "length": 1,
                 "offsetbit": 0,
@@ -417,7 +417,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "Feedback_SPA [%]",
+                "name": "Feedback L [%]",
                 "offset": 112,
                 "length": 1,
                 "offsetbit": 0,
@@ -426,7 +426,7 @@
             },
             {
                 "type": "floatbe",
-                "name": "RamRetract_ActSpd [rpm]",
+                "name": "Feedback R [%]",
                 "offset": 116,
                 "length": 1,
                 "offsetbit": 0,
@@ -435,8 +435,107 @@
             },
             {
                 "type": "floatbe",
-                "name": "ForgingBox_Temp",
+                "name": "Speed Vn_1 [rpm]",
                 "offset": 120,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "NOMforceSPA [kN]",
+                "offset": 124,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_ActSpd [mm/min]",
+                "offset": 128,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_ActPos [mm]",
+                "offset": 132,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SPA_OUT [%]",
+                "offset": 136,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback A [%]",
+                "offset": 140,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback DB [%]",
+                "offset": 144,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "IP_NomSpd [mm/min]",
+                "offset": 148,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback_SPA [%]",
+                "offset": 152,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "ForgingBox_Temp",
+                "offset": 156,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "TMP_Ind_U1 [°C]",
+                "offset": 160,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "TMP_Ind_F [°C]",
+                "offset": 164,
                 "length": 1,
                 "offsetbit": 0,
                 "scale": "1",
@@ -506,7 +605,7 @@
         "precisionV18FluxV20": "us",
         "retentionPolicyV18Flux": "",
         "org": "NMIS",
-        "bucket": "radial_forge_db",
+        "bucket": "Radial-forge-20221020",
         "x": 680,
         "y": 420,
         "wires": []
@@ -1592,5 +1691,576 @@
         "x": 740,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "fc32fe8437bad7b5",
+        "type": "buffer-parser",
+        "z": "6d8f5407a04cb9cb",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "floatbe",
+                "name": "Timer Tick [ms]",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Block-Nr",
+                "offset": 4,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Power [kW]",
+                "offset": 8,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Force [kN]",
+                "offset": 12,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ges_vibr",
+                "offset": 16,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Schlagzahl [1/min]",
+                "offset": 20,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "EXZ_pos [deg]",
+                "offset": 24,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "hydraulic low pressure [bar]",
+                "offset": 28,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "hydraulic high pressure [bar]",
+                "offset": 32,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACTpos [mm]",
+                "offset": 36,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_ACTpos [mm]",
+                "offset": 40,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACTpos [mm]",
+                "offset": 44,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "D_ACTpos [mm]",
+                "offset": 48,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_ACTpos [mm]",
+                "offset": 52,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "R_ACTpos [mm]",
+                "offset": 56,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_ActPos [mm]",
+                "offset": 60,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "INDA_ACTpos [deg]",
+                "offset": 64,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACT_Force [kN]",
+                "offset": 68,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_ACT_Force [kN]",
+                "offset": 72,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACT_Force [kN]",
+                "offset": 76,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "D_ACT_Force [kN]",
+                "offset": 80,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_ACTspd [mm/min]",
+                "offset": 84,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "R_ACTspd [mm/min]",
+                "offset": 88,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_NomPos [mm]",
+                "offset": 92,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "INDA_NOMspd [U/min]",
+                "offset": 96,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_ACTspd [mm/min]",
+                "offset": 100,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_ACTspd [mm/min]",
+                "offset": 104,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_ACTspd [mm/min]",
+                "offset": 108,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "ForgingBox_Temp",
+                "offset": 112,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_NOMpos [mm]",
+                "offset": 116,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "R_NOMpos [mm]",
+                "offset": 120,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "SBA_OUT [%]",
+                "offset": 124,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "INDA_OUT [%]",
+                "offset": 128,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOMpos [mm]",
+                "offset": 132,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_NOMpos [mm]",
+                "offset": 136,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOMpos [mm]",
+                "offset": 140,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "D_NOMpos [mm]",
+                "offset": 144,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_OUT [%]",
+                "offset": 148,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "R_OUT [%]",
+                "offset": 152,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback SBA [%]",
+                "offset": 156,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "INDA_NOMpos [deg]",
+                "offset": 160,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_OUT [%]",
+                "offset": 164,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_OUT [%]",
+                "offset": 168,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_OUT [%]",
+                "offset": 172,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "D_OUT [%]",
+                "offset": 176,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "L_NOMspd [mm/min]",
+                "offset": 180,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "R_NOMspd [mm/min]",
+                "offset": 184,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Frc_Volt",
+                "offset": 188,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "INDA_ACTspd [U/min]",
+                "offset": 192,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOMspd [mm/min]",
+                "offset": 196,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_NOMspd [mm/min]",
+                "offset": 200,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOMspd [mm/min]",
+                "offset": 204,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "D_NOMspd [mm/min]",
+                "offset": 208,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback L [%]",
+                "offset": 212,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Feedback R [%]",
+                "offset": 216,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "Speed SmoothV._n_1 [rpm]",
+                "offset": 220,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "NOMforceSPA [kN]",
+                "offset": 224,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "A_NOM_Force [kN]",
+                "offset": 228,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "B_NOM_Force [kN]",
+                "offset": 232,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            },
+            {
+                "type": "floatbe",
+                "name": "DB_NOM_Force [kN]",
+                "offset": 236,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 430,
+        "y": 860,
+        "wires": [
+            []
+        ]
     }
 ]
