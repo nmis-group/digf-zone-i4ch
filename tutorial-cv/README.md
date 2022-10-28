@@ -125,7 +125,7 @@ cd ~/digf-zone-i4ch/tutorial-cv/setup/test_run
 ```
 and run command
 ```
-sudo docker-compose op
+sudo docker-compose up
 ```
 It will install nessesary development environment and dependency frameworks and libraries inside a docker container.
 
