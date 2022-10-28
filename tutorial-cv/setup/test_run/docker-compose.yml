@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  gpu-jupyter:
+    build:
+      context: .
+    image: gpu-jupyter_test:1.1
+    container_name: cv_container 
+    ports:
+      - 8848:8888
+    volumes:
+      - ../../notebooks/:/home/jovyan/digf-coref/notebooks/
+      - ../../src/:/home/jovyan/digf-coref/src/
+      - /raid/nmis-ddm/coref-cv/data/raw/:/home/jovyan/digf-coref/data/raw
+      - /raid/nmis-ddm/coref-cv/data/processed/:/home/jovyan/digf-coref/data/processed
+    environment:
+      GRANT_SUDO: "yes"
+      JUPYTER_ENABLE_LAB: "yes"
+    # enable sudo permissions
+    user:
+      "root"
+    restart: always
