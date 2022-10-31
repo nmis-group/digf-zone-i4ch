@@ -51,13 +51,13 @@ from matplotlib import patches
 from fastcore.basics import patch
 import copy
 
-
+'''
 # Training output path
 save_path =os.getcwd()+ r'/detector'
 
 # path for ckpt file
 path = os.getcwd()+r'/detector/detector-epoch=97-valid_loss=0.16.ckpt'
-
+'''
 def filelist(root, file_type):
     """Returns a fully-qualified list of filenames under root directory"""
     return [os.path.join(directory_path, f) for directory_path, directory_name, 
