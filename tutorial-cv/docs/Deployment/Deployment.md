@@ -15,7 +15,7 @@ a
 
 ## Deployment 
 
-### 4 Deployment ZED SDK
+### Deployment ZED SDK
 
 https://www.stereolabs.com/docs/get-started-with-zed-box/
 
