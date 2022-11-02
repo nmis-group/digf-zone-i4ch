@@ -139,7 +139,8 @@ and add additional python libraries in src/Dockerfile.usefulpackages and run
 It will generate a new dockerfile and then run 
 ```
 sudo docker-compose up
-```or to rebuild the container run
+```
+or to rebuild the container run
 ```
 sudo docker-compose up --build
 ```
