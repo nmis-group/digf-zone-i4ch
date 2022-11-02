@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://www.nmis.scot">
-    <img src="resources/images/logo.png" alt="Logo" width="280" height="280">
+    <img src="docs/resources/images/logo.png" alt="Logo" width="280" height="280">
   </a>
 
   <h3 align="center">NMIS COREF</h3>
@@ -116,12 +116,12 @@ This project build with docker-compose. Major frameworks/libraries are list belo
 ## Getting Started
 To get start, first clone this repository with the command into your local.
 
-```sh
+```
 git clone https://github.com/nmis-group/digf-zone-i4ch.git
 ```
-In tutorial-cv folder nevigate to test_run folder indside setup folder 
+In tutorial-cv folder nevigate to gpu-jupyter folder within setup folder 
 ```
-cd ~/digf-zone-i4ch/tutorial-cv/setup/test_run
+cd ~/digf-zone-i4ch/tutorial-cv/setup/gpu-jupyter
 ```
 and run command
 ```
@@ -129,6 +129,24 @@ sudo docker-compose up
 ```
 It will install nessesary development environment and dependency frameworks and libraries inside a docker container.
 
+
+or else you can download the git repo : https://github.com/iot-salzburg/gpu-jupyter
+and add additional python libraries in src/Dockerfile.usefulpackages and run
+```
+./generate-Dockerfile.sh --python-only
+
+```
+It will generate a new dockerfile and then run 
+```
+sudo docker-compose up
+```or to rebuild the container run
+```
+sudo docker-compose up --build
+```
+### Docker container
+
+You can access the gpu-jupyter notebooks inside the container at http://localhost:8848
+First, create a interim folder inside work folder to save interim results (e.g. dataset.csv) and then you can run all the builds inside the notebooks folder 
 
 ### Prerequisites
 
