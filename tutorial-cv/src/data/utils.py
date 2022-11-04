@@ -44,7 +44,7 @@ from ensemble_boxes import ensemble_boxes_wbf
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import LearningRateMonitor
 from pytorch_lightning.callbacks import ModelCheckpoint
-#from objdetecteval.metrics.coco_metrics import get_coco_stats
+from objdetecteval.metrics.coco_metrics import get_coco_stats
 from pytorch_lightning import Trainer
 import torchvision.transforms as transforms
 from matplotlib import patches
