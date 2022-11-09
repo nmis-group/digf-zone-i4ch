@@ -144,6 +144,15 @@ or to rebuild the container run
 ```
 sudo docker-compose up --build
 ```
+
+### Volume
+In the docker-compose.yml file, user will mapping the notebooks folder in host machine to the container virtual directory. To allowed edit the host file, you need to change the owner and write mode of the folder from the local.
+```
+cd ../tutorial-cv
+sudo chown -R root:root notebooks/ src/
+sudo chmod -R 777 notebooks/ src/
+```
+
 ### Docker container
 
 You can access the gpu-jupyter notebooks inside the container at http://localhost:8848
