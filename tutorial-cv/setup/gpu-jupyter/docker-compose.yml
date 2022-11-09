@@ -8,13 +8,13 @@ services:
           devices:
             - capabilities:
               - gpu
-    image: gpu-jupyter_test:1.0
-    container_name: gpu_jupyter_container
+    image: gpu-jupyter_test:1.1
+    container_name: gpu_jupyter_container_1_1
     ports:
-      - 8848:8888
+      - 8858:8888
     volumes:
-      - ../../notebooks/:/home/jovyan/work/digf-coref/notebooks/
-      - ../../src/:/home/jovyan/work/digf-coref/src/
+      - ../../notebooks/:/home/jovyan/work/digf-coref/notebooks
+      - ../../src/:/home/jovyan/work/digf-coref/src
       - /raid/nmis-ddm/coref-cv/data/raw/:/home/jovyan/work/digf-coref/data/raw
       - /raid/nmis-ddm/coref-cv/data/processed/:/home/jovyan/work/digf-coref/data/processed
     environment:
