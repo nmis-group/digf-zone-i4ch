@@ -145,12 +145,15 @@ or to rebuild the container run
 sudo docker-compose up --build
 ```
 
-### Volume
-In the docker-compose.yml file, user will mapping the notebooks folder in host machine to the container virtual directory. To allowed edit the host file, you need to change the owner and write mode of the folder from the local.
+### Change owner for container accessibility
+Before running above commands, user should changer the owner of some folders so that the container could access them.
 ```
 cd ../tutorial-cv
-sudo chown -R root:root notebooks/ src/
-sudo chmod -R 777 notebooks/ src/
+sudo chown -R root:root notebooks/ src/ models/
+sudo chmod -R 777 notebooks/ src/ models/
+cd data/
+sudo chown -R root:root interim/
+sudo chmod -R 777 interim/
 ```
 
 ### Docker container
