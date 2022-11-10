@@ -144,6 +144,18 @@ or to rebuild the container run
 ```
 sudo docker-compose up --build
 ```
+
+### Change owner for container accessibility
+Before running above commands, user should changer the owner of some folders so that the container could access them.
+```
+cd ../tutorial-cv
+sudo chown -R root:root notebooks/ src/ models/
+sudo chmod -R 777 notebooks/ src/ models/
+cd data/
+sudo chown -R root:root interim/
+sudo chmod -R 777 interim/
+```
+
 ### Docker container
 
 You can access the gpu-jupyter notebooks inside the container at http://localhost:8848

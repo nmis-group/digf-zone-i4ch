@@ -391,9 +391,17 @@ RUN pip install --no-cache-dir jupyter_contrib_nbextensions \
   jupyter_nbextensions_configurator rise
 #  jupyter nbextension enable codefolding/main
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
-RUN pip install effdet==0.2.4 albumentations==1.1.0 opencv-python==4.5.4.58 opencv-python-headless==4.5.4.58 timm==0.4.12 fastcore==1.3.27 ensemble-boxes==1.0.7
+RUN pip install albumentations==1.1.0 opencv-python==4.5.4.58 opencv-python-headless==4.5.4.58 timm==0.4.12 fastcore==1.3.27 ensemble-boxes==1.0.7
 RUN pip install pytorch-lightning \
-                git+https://github.com/alexhock/object-detection-metrics
+                git+https://github.com/alexhock/object-detection-metrics \
+                scipy
+RUN git clone https://github.com/rwightman/efficientdet-pytorch.git && \
+    cd efficientdet-pytorch && \
+    python setup.py install && \
+    cd .. && \
+    rm -rf efficientdet-pytorch \
+RUN apt-get update && \
+    apt-get install -y libstdc++6
 
 RUN fix-permissions /home/$NB_USER
 
