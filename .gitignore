@@ -3,3 +3,7 @@ __pycache__/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# Anaconda Project
+/.anaconda
+/.envs
