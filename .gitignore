@@ -7,3 +7,4 @@ __pycache__/
 # Anaconda Project
 /.anaconda
 /.envs
+anaconda-projects/*/envs
