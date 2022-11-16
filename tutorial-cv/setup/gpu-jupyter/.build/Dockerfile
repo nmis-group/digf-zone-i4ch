@@ -392,6 +392,7 @@ RUN pip install --no-cache-dir jupyter_contrib_nbextensions \
 #  jupyter nbextension enable codefolding/main
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 RUN pip install albumentations==1.1.0 opencv-python==4.5.4.58 opencv-python-headless==4.5.4.58 timm==0.4.12 fastcore==1.3.27 ensemble-boxes==1.0.7
+RUN pip install panel==0.14.0 holoviews==1.15.0
 RUN pip install pytorch-lightning \
                 git+https://github.com/alexhock/object-detection-metrics \
                 scipy
