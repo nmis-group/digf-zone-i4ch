@@ -63,12 +63,8 @@ packages:
 # channels:
 #    - mychannel
 #
-- pandas
-- panel
-- hvplot=0.7.3
-- pip:
-  - opcua
-- opcua
+
+- opcua=0.98.13
 channels:
 - defaults
 - conda-forge
