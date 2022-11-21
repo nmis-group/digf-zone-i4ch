@@ -63,7 +63,9 @@ packages:
 # channels:
 #    - mychannel
 #
-
+- pandas = 1.4.2
+- matplotlib = 3.6.2
+- jupyterlab =3.3.2
 - opcua=0.98.13
 channels:
 - defaults
