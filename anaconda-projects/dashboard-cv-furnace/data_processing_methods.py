@@ -53,7 +53,7 @@ def isolate_time_period(x, date_time, initial_date, final_date):
 
 
 
-def low_pass_filter(x, wn=0.01, order=3):
+def low_pass_filter(x, wn=0.1, order=3):
     """
     Description
     -----------
@@ -203,7 +203,7 @@ def standardise(x, offset, width):
     return xs
 
 
-def remove_spikes(x, tag_name=None, tag_ID=None, plot=False, olr_def=3):
+def remove_spikes(x,olr_def=3):
     """
     Description
     -----------
@@ -217,11 +217,6 @@ def remove_spikes(x, tag_name=None, tag_ID=None, plot=False, olr_def=3):
     Parameters
     ----------
         x : signal to be processed
-        tag_name : String of the tag name. Is only needed if we are
-            going to create a plot.
-        tag_ID : String of tag ID. Is only needed if we are going to
-            create a plot.
-        plot : option to plot results of outlier removal
         olr_der : no. of standard deviations beyond the mean that will
             be defined as an outlier
 
@@ -236,7 +231,7 @@ def remove_spikes(x, tag_name=None, tag_ID=None, plot=False, olr_def=3):
     x = np.append(x, np.median(x))
 
     # Pass through high pass filter to remove slowly varying trends
-    x_filt = high_pass_filter(x, tag_name, tag_ID, False)
+    x_filt = high_pass_filter(x)
 
     # Mean and standard deviation of filtered signal
     m = np.mean(x_filt)
@@ -260,25 +255,5 @@ def remove_spikes(x, tag_name=None, tag_ID=None, plot=False, olr_def=3):
 
     x_no_spikes = np.delete(x, spike_locations)
     x_final = np.interp(indx, indx_no_spikes, x_no_spikes)
-
-    if plot:
-        fig, ax = plt.subplots(nrows=2)
-
-        # Plot outliers on filtered signal
-        ax[0].plot(indx, x_filt, color='black', label='Filtered signal')
-        ax[0].plot(spike_locations, x_filt[spike_locations], 'o',
-                   color='red', label='Outliers')
-        title = tag_ID + ' ' + tag_name + '\n' + '(spike removal)'
-        ax[0].set_title(title)
-        ax[0].legend()
-
-        # Plot outliers on original signal
-        ax[1].plot(indx, x, color='black', label='Original signal')
-        ax[1].plot(spike_locations, x[spike_locations], 'o',
-                   color='red', label='Outliers')
-        ax[1].plot(indx, x_final, color='blue', label='Remaining signal')
-        ax[1].legend()
-
-        plt.tight_layout()
 
     return x_final
