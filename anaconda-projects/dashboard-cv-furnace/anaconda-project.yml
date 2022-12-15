@@ -18,7 +18,7 @@ icon:
 #
 # Set a one-sentence-or-so 'description' key with project details
 #
-description:
+description: Data processing, visualising and predicting O2 output for the CV furnace
 
 #
 # In the commands section, list your runnable scripts, notebooks, and other code.
