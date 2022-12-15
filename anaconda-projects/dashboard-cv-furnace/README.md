@@ -12,7 +12,8 @@ unix: panel serve furnace_dashboard.ipynb
  ```
  - or if you are running the code on a server change the IP address and port appropriately
  - Then run the following command in your command line interface
- ```anaconda-project run dashboard --show 
+ ```
+ anaconda-project run dashboard --show 
  ```
  - Follow the instruction showing in the cmd and open a new web browser using the given http address to access the Bokeh server
  
