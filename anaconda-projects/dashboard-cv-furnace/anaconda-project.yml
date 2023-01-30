@@ -26,8 +26,8 @@ description: Data processing, visualising and predicting O2 output for the CV fu
 #
 commands: 
   dashboard:
-    unix: panel serve furnace_dashboard.ipynb --allow-websocket-origin=130.159.142.133:9090
-      --port 9090 --address 130.159.142.133
+    unix: panel serve furnace_dashboard.ipynb --allow-websocket-origin=130.159.142.133:8090
+      --port 8090 --address 130.159.142.133
     env_spec: default
 
 #
