@@ -26,7 +26,7 @@
 - buffer-parser node (add channels to output data after converting to data type:float, only 31 items were added since the offset is limited to 120)
 - Format node (change data format ready to be written to a influxdb bucket/database)
 - influxdb node (specify the server with URL:http://localhost:8086 and API token, orgnisation:NMIS, bucket:radial_forge_v2, measurment: forge_data_v1)
-![modbus_flow](../images/modbus_flow_node_red.png)
+![modbus_flow](images/modbus_flow_node_red.PNG)
 - files can be imported and exported as .json (when importing it should be imported as a new flow)
 
 ## Access influxdb database and query data
