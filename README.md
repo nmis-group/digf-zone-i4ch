@@ -35,19 +35,20 @@
 - Install the InfluxDB Python library:
     ```pip install influxdb-client```
 - Instantiate the client
-    ```import influxdb_client                   ```
-       
-    ```bucket = "<my-bucket>"                   ```
-    ```org = "<my-org>"                         ```
-    ```token = "<my-token>"                     ```
+    ```
+	import influxdb_client
+    	bucket = "<my-bucket>"
+   	org = "<my-org>"      
+    	token = "<my-token>"  
 
-    ```  url="http://localhost:8086"            ```
+    	 url="http://localhost:8086"
 
-    ``` client = influxdb_client.InfluxDBClient(```
-    ``` url=url,                                ```
-    ``` token=token,                            ```
-    ```org=org                                  ```
-    ```)                                        ```
+    	 client = influxdb_client.InfluxDBClient(
+    	 url=url,
+    	 token=token,
+    	 org=org
+    	)
+     ```
 - Instantiate the query client
     ```query_api = client.query_api()```
 - Create a Flux query
