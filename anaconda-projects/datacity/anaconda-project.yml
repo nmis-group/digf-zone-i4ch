@@ -26,7 +26,7 @@ description:
 #
 commands:
   dashboard:
-    unix: panel serve 03-plot_datacity_company_data.ipynb --allow-websocket-origin=130.159.142.133:8085
+    unix: panel serve 06-sector_maturity_dashboard.ipynb --allow-websocket-origin=130.159.142.133:8085
       --port 8085 --address 130.159.142.133
     env_spec: default
 
@@ -72,7 +72,11 @@ packages:
 - panel=0.14.1
 - plotly=5.9.0
 - pandas=1.5.2
-channels: []
+- geopy
+- scikit-learn
+channels:
+- defaults
+- conda-forge
 
 #
 # In the platforms section, list platforms the project should work on
