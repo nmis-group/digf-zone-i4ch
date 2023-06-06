@@ -1,6 +1,6 @@
  # Calorific Value (CV) furnace data
  
- The aim of this project is to visualise sensosr data and predict O2 output using burner settings and also using air and gas flow sensor data captured during operation of a  CV furnace. Given the temperature and expected O2 we have predicted the optimum burner settings to be used in the shop floor environment using the developed ML model.
+ The aim of this project is to visualise sensor data and predict O2 output using burner settings and also using air and gas flow sensor data captured during operation of a  CV furnace. Given the temperature and expected O2 we have predicted the optimum burner settings to be used in the shop floor environment using the developed ML model.
  
  The dashboard can be accessed using the following instructions 
  
