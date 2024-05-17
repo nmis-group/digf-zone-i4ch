@@ -4,8 +4,8 @@ cd $(cd -P -- "$(dirname -- "$0")" && pwd -P)
 # Set the path of the generated Dockerfile
 export DOCKERFILE=".build/Dockerfile"
 export STACKS_DIR=".build/docker-stacks"
-# please test the build of the commit in https://github.com/jupyter/docker-stacks/commits/master in advance
-export HEAD_COMMIT="efa95c2c5b9b095247cd2f5e55bc3b38c85da335"
+# please test the build of the commit in https://github.com/jupyter/docker-stacks/commits/main in advance
+export HEAD_COMMIT="1494233e27cdc70e3766ea2518e7153ee425fc4f"
 
 while [[ "$#" -gt 0 ]]; do case $1 in
   -p|--pw|--password) PASSWORD="$2" && USE_PASSWORD=1; shift;;
@@ -23,8 +23,8 @@ if [[ "$HELP" == 1 ]]; then
     echo "Usage: $0 [parameters]"
     echo "    -h|--help: Show this help."
     echo "    -p|--pw|--password: Set the password (and update in src/jupyter_notebook_config.json)"
-    echo "    -c|--commit: Set the head commit of the jupyter/docker-stacks submodule (https://github.com/jupyter/docker-stacks/commits/master). default: $HEAD_COMMIT."
-    echo "    --no-datascience-notebook|--python-only: Use not the datascience-notebook from jupyter/docker-stacks, don't install Julia and R."
+    echo "    -c|--commit: Set the head commit of the jupyter/docker-stacks submodule (https://github.com/jupyter/docker-stacks/commits/main). default: $HEAD_COMMIT."
+    echo "    --python-only|--no-datascience-notebook: Use not the datascience-notebook from jupyter/docker-stacks, don't install Julia and R."
     echo "    --no-useful-packages: Don't install the useful packages, specified in src/Dockerfile.usefulpackages"
     echo "    --slim: no useful packages and no datascience notebook."
     exit 21
@@ -42,7 +42,7 @@ else
   cd $STACKS_DIR && git pull && git reset --hard "$HEAD_COMMIT" > /dev/null 2>&1  && cd - && export GOT_HEAD="true"
   echo "$HEAD"
   if [[ "$GOT_HEAD" == "false" ]]; then
-    echo "Error: The given sha-commit is invalid."
+    echo "Error: The provided sha-commit is invalid."
     echo "Usage: $0 -c [sha-commit] # set the head commit of the docker-stacks submodule (https://github.com/jupyter/docker-stacks/commits/master)."
     echo "Exiting"
     exit 2
@@ -63,18 +63,47 @@ cat src/Dockerfile.header >> $DOCKERFILE
 
 echo "
 ############################################################################
-#################### Dependency: jupyter/base-image ########################
+#################### Dependency: jupyter/docker-stacks-foundation ##########
 ############################################################################
 " >> $DOCKERFILE
-cat $STACKS_DIR/base-notebook/Dockerfile | grep -v 'BASE_CONTAINER' | grep -v 'FROM $ROOT_CONTAINER' >> $DOCKERFILE
+if [ -f "$STACKS_DIR/images/docker-stacks-foundation/Dockerfile" ]; then
+    cat $STACKS_DIR/images/docker-stacks-foundation/Dockerfile | grep -v 'BASE_CONTAINER' | grep -v 'FROM $ROOT_CONTAINER' >> $DOCKERFILE
+    # copy files that are used during the build
+    cp $STACKS_DIR/images/docker-stacks-foundation/initial-condarc .build/
+    cp $STACKS_DIR/images/docker-stacks-foundation/fix-permissions .build/
+    cp $STACKS_DIR/images/docker-stacks-foundation/start.sh .build/
+    cp $STACKS_DIR/images/docker-stacks-foundation/run-hooks.sh .build/
+    cp $STACKS_DIR/images/docker-stacks-foundation/10activate-conda-env.sh .build/
+else
+    cat $STACKS_DIR/docker-stacks-foundation/Dockerfile | grep -v 'BASE_CONTAINER' | grep -v 'FROM $ROOT_CONTAINER' >> $DOCKERFILE
+    # copy files that are used during the build
+    cp $STACKS_DIR/docker-stacks-foundation/initial-condarc .build/
+    cp $STACKS_DIR/docker-stacks-foundation/fix-permissions .build/
+    cp $STACKS_DIR/docker-stacks-foundation/start.sh .build/
+fi
 
-# copy files that are used during the build:
-cp $STACKS_DIR/base-notebook/jupyter_server_config.py .build/
-cp $STACKS_DIR/base-notebook/initial-condarc .build/
-cp $STACKS_DIR/base-notebook/fix-permissions .build/
-cp $STACKS_DIR/base-notebook/start.sh .build/
-cp $STACKS_DIR/base-notebook/start-notebook.sh .build/
-cp $STACKS_DIR/base-notebook/start-singleuser.sh .build/
+echo "
+############################################################################
+#################### Dependency: jupyter/base-notebook #####################
+############################################################################
+" >> $DOCKERFILE
+if [ -f "$STACKS_DIR/images/base-notebook/Dockerfile" ]; then
+    cat $STACKS_DIR/images/base-notebook/Dockerfile | grep -v 'BASE_CONTAINER' >> $DOCKERFILE
+    # copy files that are used during the build
+    cp $STACKS_DIR/images/base-notebook/jupyter_server_config.py .build/
+    cp $STACKS_DIR/images/base-notebook/start-notebook.sh .build/
+    cp $STACKS_DIR/images/base-notebook/start-notebook.py .build/
+    cp $STACKS_DIR/images/base-notebook/start-singleuser.sh .build/
+    cp $STACKS_DIR/images/base-notebook/start-singleuser.py .build/
+    cp $STACKS_DIR/images/base-notebook/docker_healthcheck.py .build/
+else
+    cat $STACKS_DIR/base-notebook/Dockerfile | grep -v 'BASE_CONTAINER' >> $DOCKERFILE
+    # copy files that are used during the build
+    cp $STACKS_DIR/base-notebook/jupyter_server_config.py .build/
+    cp $STACKS_DIR/base-notebook/start-notebook.sh .build/
+    cp $STACKS_DIR/base-notebook/start-singleuser.sh .build/
+    cp $STACKS_DIR/base-notebook/docker_healthcheck.py .build/
+fi
 chmod 755 .build/*
 
 echo "
@@ -82,14 +111,28 @@ echo "
 ################# Dependency: jupyter/minimal-notebook #####################
 ############################################################################
 " >> $DOCKERFILE
-cat $STACKS_DIR/minimal-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+if [ -f "$STACKS_DIR/images/minimal-notebook/Dockerfile" ]; then
+    cat $STACKS_DIR/images/minimal-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+    # copy files that are used during the build
+    cp -r $STACKS_DIR/images/minimal-notebook/setup-scripts .build/
+    cp $STACKS_DIR/images/minimal-notebook/Rprofile.site .build/
+else
+    cat $STACKS_DIR/minimal-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+    # copy files that are used during the build
+    cp -r $STACKS_DIR/minimal-notebook/setup-scripts .build/
+    cp $STACKS_DIR/minimal-notebook/Rprofile.site .build/
+fi
 
 echo "
 ############################################################################
 ################# Dependency: jupyter/scipy-notebook #######################
 ############################################################################
 " >> $DOCKERFILE
-cat $STACKS_DIR/scipy-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+if [ -f "$STACKS_DIR/images/scipy-notebook/Dockerfile" ]; then
+    cat $STACKS_DIR/images/scipy-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+else
+    cat $STACKS_DIR/scipy-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+fi
 
 # install Julia and R if not excluded or spare mode is used
 if [[ "$no_datascience_notebook" != 1 ]]; then
@@ -98,7 +141,11 @@ if [[ "$no_datascience_notebook" != 1 ]]; then
   ################ Dependency: jupyter/datascience-notebook ##################
   ############################################################################
   " >> $DOCKERFILE
-  cat $STACKS_DIR/datascience-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+    if [ -f "$STACKS_DIR/images/datascience-notebook/Dockerfile" ]; then
+        cat $STACKS_DIR/images/datascience-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+    else
+        cat $STACKS_DIR/images/datascience-notebook/Dockerfile | grep -v BASE_CONTAINER >> $DOCKERFILE
+    fi
 else
   echo "Set 'no-datascience-notebook' = 'python-only', not installing the datascience-notebook with Julia and R."
 fi
@@ -139,13 +186,13 @@ if [[ "$USE_PASSWORD" == 1 ]]; then
   \"NotebookApp\": {
     \"password\": \"sha1:$SALT:$HASHED\"
   }
-}" > src/jupyter_notebook_config.json
-fi
+}" > .build/jupyter_notebook_config.json
 
-cp src/jupyter_notebook_config.json .build/
-echo >> $DOCKERFILE
-echo "# Copy jupyter_notebook_config.json" >> $DOCKERFILE
-echo "COPY jupyter_notebook_config.json /etc/jupyter/"  >> $DOCKERFILE
+  # copy the config into .build and append the lines into the Dockerfile
+  echo >> $DOCKERFILE
+  echo "# Copy jupyter_notebook_config.json" >> $DOCKERFILE
+  echo "COPY jupyter_notebook_config.json /etc/jupyter/"  >> $DOCKERFILE
+fi
 
 # Set environment variables
 export JUPYTER_UID=$(id -u)

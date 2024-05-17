@@ -1,6 +1,7 @@
 version: "3.8"
 services:
-  gpu-container:
+  gpu-jupyter:
+    container_name: gpu-jupyter
     build: .build
     deploy:
       resources:
@@ -8,10 +9,19 @@ services:
           devices:
             - capabilities:
               - gpu
-    image: gpu-jupyter_test:1.1
-    container_name: gpu_jupyter_container
+    # # Set hardware limits: one GPU, max. 48GB RAM, max. 31 GPUs
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           capabilities: [gpu]
+    #           device_ids: ["0"]  # select one GPU
+    #     limits:
+    #       cpus: "31.0"
+    #       memory: 48g
     ports:
-      - 8858:8888
+      - 8848:8888
     volumes:
       - ../../notebooks/:/home/jovyan/work/digf-coref/notebooks
       - ../../src/:/home/jovyan/work/digf-coref/src
