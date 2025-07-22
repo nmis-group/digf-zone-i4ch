@@ -1,0 +1,51 @@
+# This is an Anaconda project file.
+#
+# Here you can describe your project and how to run it.
+# Use `anaconda-project run` to run the project.
+# The file is in YAML format, please see http://www.yaml.org/start.html for more.
+#
+
+#
+# Set the 'name' key to name your project
+#
+name: tutorial-cv 
+icon:
+description:
+commands: {}
+variables: {}
+services: {}
+downloads: {}
+packages:
+- python=3.10
+- tensorflow[and-cuda]==2.15.0
+- jupyterlab=3.6.3
+- matplotlib=3.9.1
+- pandas=2.3.1
+- pip:
+  - opencv-python==4.12.0.88
+  - effdet==0.4.1
+  - ensemble-boxes==1.0.7
+  - git+https://github.com/alexhock/object-detection-metrics@main#egg=objdetecteval
+  - albumentations==1.1.0
+  - torch==2.7.1 --extra-index-url https://download.pytorch.org/whl/cu113
+  - torchaudio==2.7.1 --extra-index-url https://download.pytorch.org/whl/cu113
+  - torchvision==0.22.1 --extra-index-url https://download.pytorch.org/whl/cu113
+  - pytorch-lightning==2.5.2
+- scikit-learn==1.7.1
+- scipy==1.14.1
+- fastcore==1.3.27
+- plotly
+- panel==1.4.2
+channels:
+- conda-forge
+- defaults
+platforms:
+- linux-64
+- osx-64
+- win-64
+env_specs:
+  default:
+    description: Default environment spec for running commands
+    packages: []
+    channels: []
+    platforms: []
