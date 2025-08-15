@@ -83,9 +83,9 @@ Project Name: Real-time Bolt Detection
 
 In this repository, we only demostrate the real-time bolt detection tutoruial by using deep learning.
 
-
-[![Product Name Screen Shot][product-screenshot]](https://www.nmis.scot/)
-
+<div align="center">
+<img src="docs/resources/images/screenshot.png" alt="Logo" width="280" height="280">
+</div>
 In this repository, a Computer Vision (CV) object detection system by using ZED camera and edge device and with a deep learning model is presented. According to the CV system structure, data collection annotation, EfficientDet model training, YOLOv5 model training and real time detection are illustrated separately. Finally, by deploying and integrating the system on the smart workbench, it successfully detects all bolts on the working process of assembly. The result reveals that the CV system has a high accuracy of bolts object detection according to the edge device and YOLOv5 model with deep learning.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
